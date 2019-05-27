@@ -1,13 +1,13 @@
 enter cluster
    1A
 enter meas,run,niter,nover
-      20   10   30   100
+      40   10   50   100
 enter rand #,iso,dfac,ifac,isg
      394315   0  0.5  1.0  1
 enter ed ,tprime, V
-      0.0  0.0   0.625
+      0.0  0.0   -1.5
 enter delta  nwn
-      10.   200
+      3.   100
 enter ca 
      0.55
 

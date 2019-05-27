@@ -502,7 +502,7 @@ c	Write out some observables vs iteration to file
 c***************************************************************************************
       open(210,file='observ-vs-iter.dat',status='unknown')
 	if (iter.eq.1) write(210,"('# iter,TDOS(R=0),TDOS(K,w),Gamma(K,w),ADOS_GcKfsc,ADOS_rhoaveloc_f(n)') ") 
-	write(210,"(i2,1x,f10.6,1x,f10.6,1x,f10.6,1x,f10.6,1x,f10.6)") iter,rholoc_typ(0),-aimag(gft(0))/pi,r3/Nc,r1,r4
+	write(210,"(i3,1x,f10.6,1x,f10.6,1x,f10.6,1x,f10.6,1x,f10.6)") iter,rholoc_typ(0),-aimag(gft(0))/pi,r3/Nc,r1,r4
 
 	write(6,*) 'tdos(0)=',-aimag(gft(0))/pi, 'gamma(0)=', r3/Nc
 	write(6,*) 'GdKK_sum_rule=',r0

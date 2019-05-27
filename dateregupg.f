@@ -18,7 +18,7 @@ c****************************************************************************
         select case(disorder_type) 
 	  case(1)	! Binary distrubution P(rand()) = ca*delta(rand())+(1-ca)*delta(rand())
 	    do jc=1,Nc
-    !           Now update the jc'th potential V(jc)
+    !           Now update the jc th potential V(jc)
     !           if(rand(0).gt.0.5)then 	!g77
     !           Propose a change
 		if(isv == 1) then

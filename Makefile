@@ -29,7 +29,7 @@ F90=ifort
 LINK = ifort
 MKLPATH= /opt/intel/mkl/lib/intel64/ 
 MKL_LIBS=-L$(MKLPATH) -lmkl_lapack95_lp64 -lmkl_blas95_lp64 -Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -liomp5 -lpthread_nonshared $(FFLAGS) $(LFLAGS)
-FFLAGS = -openmp -fpp -i4
+FFLAGS =  -fpp -i4
 #################################
 
 all: $(TMDCA) $(SPEC)

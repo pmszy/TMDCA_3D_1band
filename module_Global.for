@@ -34,11 +34,11 @@ c****************************************************************************
 	logical, parameter :: iover = .false. !If true, use k_tilde momentum summation; if false, use partial density of states
         logical, parameter :: is_broyden = .false. ! If true use broyden to converge the self-energy
 	logical, parameter :: gscript_pole = .false. !If true, use close to critical disorder where Gscript might diverge
-        logical, parameter :: ityp = .true. ! if true, TMT for all methods is implemented for error bar calculations.
+        logical, parameter :: ityp = .false. ! if true, TMT for all methods is implemented for error bar calculations.
         logical, parameter :: tmt = .false. ! if true, use the orginal CTMT. Both tmt&tmt_new =off for DCA rho(K)=exp(<Ln(rho(K)>)
         logical, parameter :: tmt_new = .false. ! if true, use one of the new schemes below: see meas.f
         logical, parameter :: tmt1 = .false. ! if true,  new-vers1: rho_typ(K)=exp(<Ln(rho_ii)>)exp(<Ln(rho(K)/rho_ii)>)
-        logical, parameter :: tmt2 = .true.      ! if true,  new-vers2: rho_typ(K)=exp(<Ln(rho_ii)>)<(rho(K)/rho_ii)>
+        logical, parameter :: tmt2 = .false.      ! if true,  new-vers2: rho_typ(K)=exp(<Ln(rho_ii)>)<(rho(K)/rho_ii)>
         logical, parameter :: tmt3 = .false.    ! if true, rho_typ(K)=(1-a)*exp(<Ln(rho_ii) + a*<rho(K)
         logical, parameter :: tmt4 = .false.    ! if true, rho_typ(K)=exp(<Ln(rho_ii)>)
         logical, parameter :: isw = .false. ! if true, use the inhomogeneous grid else use homogeneous grid
@@ -47,7 +47,7 @@ c****************************************************************************
 !	Interpolation flags. Works only if interpolation is true and case either 1,2, or 3.
         logical, parameter :: RHOTYPICAL = .false. ! Set true calculate error bar
         logical, parameter :: interpolation = .false. !Interpolation works only if case is either 1, 2, or 3. Set below in interpolation_type
-        logical, parameter :: spline = .true.      ! if true,  use spline
+        logical, parameter :: spline = .false.      ! if true,  use spline
 !        logical, parameter :: spline_interpolation = .false. ! Set true calculate error bar
 !        logical, parameter :: star_interpolation = .false. ! Set true calculate error bar
 !        logical, parameter :: trilinear_interpolation = .true. ! Set true calculate error bar
@@ -66,7 +66,7 @@ c****************************************************************************
 	integer, parameter :: myrank=0,lud=42,iprint=19 
 	integer, parameter :: imeas=500000 ! For histogram. Should be larged enough
         integer,dimension(8) :: values
-	integer,parameter :: gsflag=1       ! gsflag=0 => P-H symmetry; sflag=1 => no P-H symmetry
+	integer,parameter :: gsflag=0       ! gsflag=0 => P-H symmetry; sflag=1 => no P-H symmetry
         integer, parameter :: tables_type = 1 ! 1=ibetts,2=conventional,3=cubic
         integer, parameter :: interpolation_type = 1 ! 1=trilinear_interpolation,2=star_interpolation,3=spline_interpolation
 !#############################################################################
