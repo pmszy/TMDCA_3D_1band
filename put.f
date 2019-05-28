@@ -772,7 +772,7 @@ c......2.  Other observables just as it is in the dos.dat output
 	  write(41,"('#     w           TDOS(K,w)           Gamma(0,w)           ADOS(K,w)       ADOS_Error '
      &		      '       TDOS_Error    Gamma_Error    TDOS_Loc(R=0)       TDOS_Loc_Error')") 
 	  write(47,"('#     w        drhof       drho_log         d_gamma    ')") 
-	  write(48,"('#     w    Real_sigma(ic,w)  Imag_sigma(ic,w)')  ") 
+	  write(48,"('#     w    Real_sigma(ic,w)  -Imag_sigma(ic,w)')  ") 
 
           do n=-nwn,nwn
 	    r1=0.d0
@@ -807,7 +807,7 @@ c	    r4=r4/float(Nc)
             write(40,"(1x,f10.6,10(2x,e15.8))") wn(n),real(gft(n)),aimag(gft(n)),r1
             write(41,"(1x,f15.6,20(2x,e15.8))") wn(n),-aimag(gft(n))/pi,r1,r2,r3,-aimag(gft(n))*r7,r8,rholoc_typ(n),
      &            drholoc_typ(n)
-            write(48,"(1x,f10.6,2x,e15.8,2x,e15.8)") wn(n),r6,r5	
+            write(48,"(1x,f10.6,2x,e15.8,2x,e15.8)") wn(n),r5,r6	
 	  end do
 c	Print constant Gamma by integrating out frequency(W) and momentum (K).
         open(unit=39,file='Gamma_const.dat',status='unknown')
